@@ -1,0 +1,134 @@
+CREATE DATABASE Gym
+
+USE Gym
+
+CREATE TABLE EstadosCuotas (
+    ID_Estado INT PRIMARY KEY,
+    Descripcion VARCHAR(50)
+);
+
+CREATE TABLE Rutinas (
+    ID_Rutina INT PRIMARY KEY,
+    Lunes VARCHAR(250),
+    Martes VARCHAR(250),
+    Miercoles VARCHAR(250),
+    Jueves VARCHAR(250),
+    Viernes VARCHAR(250),
+    Sabado VARCHAR(250)
+);
+
+
+
+CREATE TABLE Tipos (
+    ID_Tipo INT PRIMARY KEY,
+    Descripcion VARCHAR(50)
+);
+
+CREATE TABLE Distribuidores (
+    ID_Distribuidor INT PRIMARY KEY,
+    Nombre VARCHAR(50),
+    Telefono VARCHAR(20),
+    Email VARCHAR(50)
+);
+
+
+
+CREATE TABLE FormasPago (
+    ID_FormaPago INT PRIMARY KEY,
+    Descripcion VARCHAR(50)
+);
+
+CREATE TABLE Clientes (
+    DNI VARCHAR(20) PRIMARY KEY,
+    Nombre VARCHAR(50),
+    Apellido VARCHAR(50),
+    FechaNacimiento DATE,
+    FechaInicio DATE,
+    EstadoCuotaID INT,
+    RutinaID INT,
+    FechaCuotaPagadaHasta DATE,
+    FOREIGN KEY (EstadoCuotaID) REFERENCES EstadosCuotas(ID_Estado),
+    FOREIGN KEY (RutinaID) REFERENCES Rutinas(ID_Rutina)
+);
+
+CREATE TABLE Facturas (
+    FacturaID INT PRIMARY KEY,
+    ClienteDNI VARCHAR(20),
+    FechaFactura DATE,
+    Total DECIMAL(10, 2),
+    FOREIGN KEY (ClienteDNI) REFERENCES Clientes(DNI)
+);
+
+CREATE TABLE DetalleFactura (
+    DetalleID INT PRIMARY KEY,
+    FacturaID INT,
+    Descripcion TEXT,
+    Cantidad INT,
+    PrecioUnitario DECIMAL(10, 2),
+    Subtotal DECIMAL(10, 2),
+    FormaPagoID INT,
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (FormaPagoID) REFERENCES FormasPago(ID_FormaPago)
+);
+
+
+
+CREATE TABLE Productos (
+    ID_Producto INT PRIMARY KEY,
+    Descripcion TEXT,
+    TipoID INT,
+    DistribuidorID INT,
+    Precio DECIMAL(10, 2),
+    Stock INT,
+    FOREIGN KEY (TipoID) REFERENCES Tipos(ID_Tipo),
+    FOREIGN KEY (DistribuidorID) REFERENCES Distribuidores(ID_Distribuidor)
+);
+
+CREATE TABLE FacturaProductos (
+    DetalleID INT PRIMARY KEY,
+    FacturaID INT,
+    ProductoID INT,
+    Cantidad INT,
+    PrecioUnitario DECIMAL(10, 2),
+    Subtotal DECIMAL(10, 2),
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (ProductoID) REFERENCES Productos(ID_Producto)
+);
+
+CREATE TABLE Cuotas (
+    ID_Cuota INT PRIMARY KEY,
+    Descripcion VARCHAR(50),
+    Monto DECIMAL(10, 2),
+    FechaVencimiento DATE
+);
+
+CREATE TABLE FacturaCuotas (
+    DetalleID INT PRIMARY KEY,
+    FacturaID INT,
+    CuotaID INT,
+    Cantidad INT,
+    PrecioUnitario DECIMAL(10, 2),
+    Subtotal DECIMAL(10, 2),
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (CuotaID) REFERENCES Cuotas(ID_Cuota)
+);
+
+CREATE TABLE FacturaFormasPago (
+    FacturaID INT,
+    FormaPagoID INT,
+    Monto DECIMAL(10, 2),
+    PRIMARY KEY (FacturaID, FormaPagoID),
+    FOREIGN KEY (FacturaID) REFERENCES Facturas(FacturaID),
+    FOREIGN KEY (FormaPagoID) REFERENCES FormasPago(ID_FormaPago)
+);
+
+
+CREATE TABLE CuotasClientes (
+    ClienteDNI VARCHAR(20),
+    CuotaID INT,
+    EstadoCuotaID INT,
+    PRIMARY KEY (ClienteDNI, CuotaID),
+    FOREIGN KEY (ClienteDNI) REFERENCES Clientes(DNI),
+    FOREIGN KEY (CuotaID) REFERENCES Cuotas(ID_Cuota),
+    FOREIGN KEY (EstadoCuotaID) REFERENCES EstadosCuotas(ID_Estado)
+);
