@@ -1,0 +1,17 @@
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\bin\Debug\net6.0-windows\GymForm.exe
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\bin\Debug\net6.0-windows\GymForm.deps.json
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\bin\Debug\net6.0-windows\GymForm.runtimeconfig.json
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\bin\Debug\net6.0-windows\GymForm.dll
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\bin\Debug\net6.0-windows\GymForm.pdb
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.csproj.AssemblyReference.cache
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.Form1.resources
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.csproj.GenerateResource.cache
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.AssemblyInfoInputs.cache
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.AssemblyInfo.cs
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.csproj.CoreCompileInputs.cache
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.dll
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\refint\GymForm.dll
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.pdb
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\GymForm.genruntimeconfig.cache
+C:\Users\lauta\Desktop\Proyectos\1.Gym\GymForm\GymForm\obj\Debug\net6.0-windows\ref\GymForm.dll
